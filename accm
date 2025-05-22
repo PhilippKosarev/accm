@@ -95,7 +95,7 @@ class CLI:
         content_list = []
         for item in contents:
           value = contents.get(item)
-          content_list.append(f"{item} '{value}'")
+          content_list.append(f"{item} = '{value}'")
         print(typewriter.list_to_columns(content_list, None, 2))
 
   def set(self, path_to_config, config_item, value):
