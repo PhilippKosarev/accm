@@ -9,7 +9,7 @@ A config manager for Assetto Corsa. Written in Python, utilises [libjam](https:/
 ## How to run ACCM
 Installing the dependencies:
 ```
-pip install toml Send2Trash patool rarfile pathlib
+pip install libjam
 ```
 
 Cloning the repo:
