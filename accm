@@ -112,6 +112,16 @@ class CLI:
     if done is False:
       print(f"Config '{path_to_config}' does not exist.")
 
+  def set_to_default(self, path_to_config):
+    default_configs = config_manager.get_configs(defaults=True)
+    done = False
+    for config in default_configs:
+      if path_to_config == config:
+        default_contents = default_configs.get(config)
+        config_manager.write_config(path_to_config, default_contents)
+        done = True
+    if done is False:
+      print(f"Config '{path_to_config}' does not exist.")
 
 cli = CLI()
 
@@ -131,6 +141,9 @@ commands = {
 
   'set': {'function': cli.set,
   'description': 'Sets a given value for a given variable in a given config'},
+
+  'reset': {'function': cli.set_to_default,
+  'description': 'Sets a given config file to default'},
 }
 # options = {
 #   'example':      {'long': ['example'],           'short': ['e'],
